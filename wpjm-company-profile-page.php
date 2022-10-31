@@ -93,12 +93,33 @@ function gma_wpjmccp_companies_archive_page_template( $template ){
 * Creates custom companies/company taxonomy. This will show under Job Listings > Companies as well as within the Editor metabox
 */
 function gma_wpjmcpp_job_taxonomy_init(){
+	
+	$company_taxanomy_labels = array(
+		'name'                       => _x( 'Companies', 'Taxonomy General Name', 'wpjm-company-profile-page' ),
+		'singular_name'              => _x( 'Company', 'Taxonomy Singular Name', 'wpjm-company-profile-page' ),
+		'menu_name'                  => __( 'Companies', 'wpjm-company-profile-page' ),
+		'all_items'                  => __( 'All Companies', 'wpjm-company-profile-page' ),
+		'new_item_name'              => __( 'New Company Name', 'wpjm-company-profile-page' ),
+		'add_new_item'               => __( 'Add New Company', 'wpjm-company-profile-page' ),
+		'edit_item'                  => __( 'Edit Company', 'wpjm-company-profile-page' ),
+		'update_item'                => __( 'Update Company', 'wpjm-company-profile-page' ),
+		'view_item'                  => __( 'View Company', 'wpjm-company-profile-page' ),
+		'separate_items_with_commas' => __( 'Separate companies with commas', 'wpjm-company-profile-page' ),
+		'add_or_remove_items'        => __( 'Add or remove companies', 'wpjm-company-profile-page' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'wpjm-company-profile-page' ),
+		'popular_items'              => __( 'Popular Companies', 'wpjm-company-profile-page' ),
+		'search_items'               => __( 'Search Companies', 'wpjm-company-profile-page' ),
+		'not_found'                  => __( 'Company not found', 'wpjm-company-profile-page' ),
+		'no_terms'                   => __( 'No Companies', 'wpjm-company-profile-page' ),
+		'items_list'                 => __( 'Companies list', 'wpjm-company-profile-page' ),
+		'items_list_navigation'      => __( 'Companies list navigation', 'wpjm-company-profile-page' )
+    	);
 
 	register_taxonomy(
 		'companies',
 		'job_listing',
 		array(
-			'label' => __( 'Companies', 'wpjm-company-profile-page' ),
+			'label' => $company_taxanomy_labels,
 			'rewrite' => array( 'slug' => 'company'),
 			'public' => true,
       /*
